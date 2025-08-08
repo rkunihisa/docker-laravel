@@ -61,7 +61,7 @@ jobs:
         if: ${{ !steps.cache-npm-ci.outputs.cache-hit }}
 
       - name: Fix npm permissions
-        run: docker compose exec -T web chown -R 1001:118 /root/.npm
+        run: docker compose exec -T web chown -R 1001:118 /root
 
       - name: Transpile assets
         run: docker compose exec -T web npm run prod
